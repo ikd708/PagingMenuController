@@ -1,5 +1,18 @@
-source 'https://github.com/CocoaPods/Specs.git'
+# pod version 1.4.0
+
+# Platform
+platform :ios, '9.0'
+
+# Swift Version
+swift_version = '4.0'
+
+# Use Frameworks
 use_frameworks!
+
+# Source
+source 'https://github.com/CocoaPods/Specs.git'
+
+# Workspace
 workspace './PagingMenuControllerDemo.xcworkspace'
 
 target 'PagingMenuControllerDemo' do
@@ -12,12 +25,4 @@ end
 
 target 'PagingMenuControllerDemoTests' do
   pod "PagingMenuController", :path => "../"
-end
-
-post_install do |installer|
- installer.pods_project.targets.each do |target|
-   target.build_configurations.each do |config|
-     config.build_settings['SWIFT_VERSION'] = '3.0'
-   end
- end
 end
